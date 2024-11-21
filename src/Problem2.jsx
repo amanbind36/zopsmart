@@ -6,24 +6,24 @@ const Problem2 = () => {
 
    
     useEffect(() => {
-        const cycle = ['green', 'yellow', 'red', 'yellow', 'green']; // Color cycle
-        const durations = [3000, 2000, 2000, 5000, 2000]; // Durations for each color (in ms)
+        const allColor = ['green', 'yellow', 'red', 'yellow', 'green']; 
+        const durations = [3000, 2000, 2000, 5000, 2000]; 
 
         let index = 0; 
 
         
         const interval = setInterval(() => {
-            setColor(cycle[index]);
-            index = (index + 1) % cycle.length; 
+            setColor(allColor[index]);
+            index = (index + 1) % allColor.length; 
         }, durations[index]); 
 
         return () => clearInterval(interval);
     }, []);
   return (
-    <div style={{height:"100px",width:"100px",border:"1px solid black",backgroundColor:color}}>
+    <div style={{height:"300px",width:"300px",border:"1px solid black",backgroundColor:color}}>
         
     </div>
   )
 }
 
-export default Problem2
+export default Problem2;
